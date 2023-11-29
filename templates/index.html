@@ -7,6 +7,57 @@
 <body>
 <h1>Mushroom Classification</h1>
 <form action="/predict" method="post">
+    <label for="cap-shape">Cap Shape:</label>
+    <select name="cap-shape" id="cap-shape">
+        <option value="Bell">Bell</option>
+        <option value="Conical">Conical</option>
+        <option value="Convex">Convex</option>
+        <option value="Flat">Flat</option>
+        <option value="Knobbed">Knobbed</option>
+        <option value="Sunken">Sunken</option>
+    </select>
+    <br><br>
+    <label for="cap-surface">Cap Surface:</label>
+    <select name="cap-surface" id="cap-surface">
+        <option value="Fibrous">Fibrous</option>
+        <option value="Grooves">Grooves</option>
+        <option value="Scaly">Scaly</option>
+        <option value="Smooth">Smooth</option>
+    </select>
+    <br><br>
+    <label for="cap-color">Cap Color:</label>
+    <select name="cap-color" id="cap-color">
+        <option value="Brown">Brown</option>
+        <option value="Buff">Buff</option>
+        <option value="Cinnamon">Cinnamon</option>
+        <option value="Gray">Gray</option>
+        <option value="Green">Green</option>
+        <option value="Pink">Pink</option>
+        <option value="Purple">Purple</option>
+        <option value="Red">Red</option>
+        <option value="White">White</option>
+        <option value="Yellow">Yellow</option>
+    </select>
+    <br><br>
+    <label for="bruises">Bruises:</label>
+    <select name="bruises" id="bruises">
+        <option value="Bruises">Bruises</option>
+        <option value="No Bruises">No Bruises</option>
+    </select>
+    <br><br>
+    <label for="odor">Odor:</label>
+    <select name="odor" id="odor">
+        <option value="Almond">Almond</option>
+        <option value="Anise">Anise</option>
+        <option value="Creosote">Creosote</option>
+        <option value="Fishy">Fishy</option>
+        <option value="Foul">Foul</option>
+        <option value="Musty">Musty</option>
+        <option value="None">None</option>
+        <option value="Pungent">Pungent</option>
+        <option value="Spicy">Spicy</option>
+    </select>
+    <br><br>
     <label for="gill-attachment">Gill Attachment:</label>
     <select name="gill-attachment" id="gill-attachment">
         <option value="Attached">Attached</option>
@@ -169,74 +220,7 @@
         <option value="Woods">Woods</option>
     </select>
     <br><br>
-    <label for="cap-shape">Cap Shape:</label>
-    <select name="cap-shape" id="cap-shape">
-        <option value="Bell">Bell</option>
-        <option value="Conical">Conical</option>
-        <option value="Convex">Convex</option>
-        <option value="Flat">Flat</option>
-        <option value="Knobbed">Knobbed</option>
-        <option value="Sunken">Sunken</option>
-    </select>
-    <br><br>
-    <label for="cap-surface">Cap Surface:</label>
-    <select name="cap-surface" id="cap-surface">
-        <option value="Fibrous">Fibrous</option>
-        <option value="Grooves">Grooves</option>
-        <option value="Scaly">Scaly</option>
-        <option value="Smooth">Smooth</option>
-    </select>
-    <br><br>
-    <label for="cap-color">Cap Color:</label>
-    <select name="cap-color" id="cap-color">
-        <option value="Buff">Buff</option>
-        <option value="Cinnamon">Cinnamon</option>
-        <option value="Gray">Gray</option>
-        <option value="Green">Green</option>
-        <option value="Pink">Pink</option>
-        <option value="Purple">Purple</option>
-        <option value="Red">Red</option>
-        <option value="White">White</option>
-        <option value="Yellow">Yellow</option>
-    </select>
-    <br><br>
-    <label for="bruises">Bruises:</label>
-    <select name="bruises" id="bruises">
-        <option value="Bruises">Bruises</option>
-        <option value="No Bruises">No Bruises</option>
-    </select>
-    <br><br>
-    <label for="odor">Odor:</label>
-    <select name="odor" id="odor">
-        <option value="Almond">Almond</option>
-        <option value="Anise">Anise</option>
-        <option value="Creosote">Creosote</option>
-        <option value="Fishy">Fishy</option>
-        <option value="Foul">Foul</option>
-        <option value="Musty">Musty</option>
-        <option value="None">None</option>
-        <option value="Pungent">Pungent</option>
-        <option value="Spicy">Spicy</option>
-    </select>
-    <br><br>
-    <label for="veil-type">Veil Type:</label>
-    <select name="veil-type" id="veil-type">
-        <option value="Partial">Partial</option>
-        <option value="Universal">Universal</option>
-    </select>
-    <br><br>
-    <label for="ring-type">Ring Type:</label>
-    <select name="ring-type" id="ring-type">
-        <option value="Cobwebby">Cobwebby</option>
-        <option value="Evanescent">Evanescent</option>
-        <option value="Flaring">Flaring</option>
-        <option value="Large">Large</option>
-        <option value="None">None</option>
-        <option value="Pendant">Pendant</option>
-        <option value="Sheathing">Sheathing</option>
-        <option value="Zone">Zone</option>
-    </select>
-    <br><br>
+
     <input type="submit" value="Predict">
 </form>
 </body>

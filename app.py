@@ -34,8 +34,7 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     if request.method == 'POST':
-        preprocessor = Preprocessor()
-        user_inputs = [request.form.get(feature) for feature in preprocessor.features]
+        user_inputs = [request.form.get(feature) for feature in Preprocessor.features]
 
         # Check if all inputs are provided
         if None in user_inputs:
