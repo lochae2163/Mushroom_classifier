@@ -1,13 +1,12 @@
 class Preprocessor:
-    def __init__(self):
-        self.features = [
+    features = [
             'cap-shape', 'cap-surface', 'cap-color', 'bruises', 'odor', 'gill-attachment',
             'gill-spacing', 'gill-size', 'gill-color', 'stalk-shape', 'stalk-root',
             'stalk-surface-above-ring', 'stalk-surface-below-ring', 'stalk-color-above-ring',
             'stalk-color-below-ring', 'veil-color', 'ring-number', 'ring-type', 'spore-print-color',
             'population', 'habitat'
         ]
-        self.categories = {
+    categories = {
             'cap-shape': ['b', 'c', 'x', 'f', 'k', 's'],
             'cap-surface': ['f', 'g', 'y', 's'],
             'cap-color': ['n', 'b', 'c', 'g', 'r', 'p', 'u', 'e', 'w', 'y'],
@@ -30,7 +29,7 @@ class Preprocessor:
             'population': ['a', 'c', 'n', 's', 'v', 'y'],
             'habitat': ['g', 'l', 'm', 'p', 'u', 'w', 'd']
         }
-        self.processed_inputs = []* 94
+    processed_inputs = []* 94
 
     def _one_hot_encode(self, user_inputs):
         processed_inputs = [0] * 94  # Ensure consistent size for all inputs

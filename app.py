@@ -5,8 +5,27 @@ from inputs_preprocessing.preprocessing import Preprocessor
 app = Flask(__name__)
 
 # Load the trained model
-with open("trained_model.pickle", "rb") as file:
-    model = pickle.load(file)
+try:
+    with open("models/trained_model.pickle", "rb") as file:
+        model = pickle.load(file)
+except Exception as e:
+    print(f"Error loading the model: {e}")
+    model = None
+
+# A function to process inputs and make predictions
+def predict_result(user_inputs):
+    if model is not None:
+        preprocessor = Preprocessor()
+        preprocessor.processed_inputs = preprocessor._one_hot_encode(user_inputs)
+
+        # Make predictions
+        prediction = model.predict([preprocessor.processed_inputs])
+
+        result = 'Edible' if prediction[0] == 1 else 'Poisonous'
+        return result
+    else:
+        return "Error: Model not available"
+
 
 @app.route('/')
 def home():
@@ -16,18 +35,13 @@ def home():
 def predict():
     if request.method == 'POST':
         preprocessor = Preprocessor()
-        user_inputs = []
+        user_inputs = [request.form.get(feature) for feature in preprocessor.features]
 
-        for feature in preprocessor.features:
-            user_input = request.form.get(feature)
-            user_inputs.append(user_input)
+        # Check if all inputs are provided
+        if None in user_inputs:
+            return render_template('result.html', result="Error: Incomplete input")
 
-        preprocessor.processed_inputs = preprocessor._one_hot_encode(user_inputs)
-
-        # Make predictions
-        prediction = model.predict([preprocessor.processed_inputs])
-
-        result = 'Edible' if prediction[0] == 1 else 'Poisonous'
+        result = predict_result(user_inputs)
 
         return render_template('result.html', result=result)
 
