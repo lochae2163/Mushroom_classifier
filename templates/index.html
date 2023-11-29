@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mushroom Classification</title>
+</head>
+<body>
+    <h1>Mushroom Classification</h1>
+    <form action="/predict" method="post">
+	<label for="gill-attachment">Gill Attachment:</label>
+	<select name="gill-attachment" id="gill-attachment">
+		<option value="Attached">Attached</option>
+		<option value="Descending">Descending</option>
+		<option value="Free">Free</option>
+		<option value="Notched">Notched</option>
+	</select>
+	<br><br>
+	<label for="gill-spacing">Gill Spacing:</label>
+	<select name="gill-spacing" id="gill-spacing">
+		<option value="Close">Close</option>
+		<option value="Crowded">Crowded</option>
+		<option value="Distant">Distant</option>
+	</select>
+	<br><br>
+	<label for="gill-size">Gill Size:</label>
+	<select name="gill-size" id="gill-size">
+		<option value="Broad">Broad</option>
+		<option value="Narrow">Narrow</option>
+	</select>
+	<br><br>
+	<label for="gill-color">Gill Color:</label>
+	<select name="gill-color" id="gill-color">
+		<option value="Black">Black</option>
+		<option value="Brown">Brown</option>
+		<option value="Buff">Buff</option>
+		<option value="Chocolate">Chocolate</option>
+		<option value="Gray">Gray</option>
+		<option value="Green">Green</option>
+		<option value="Orange">Orange</option>
+		<option value="Pink">Pink</option>
+		<option value="Purple">Purple</option>
+		<option value="Red">Red</option>
+		<option value="White">White</option>
+		<option value="Yellow">Yellow</option>
+	</select>
+	<br><br>
+	<label for="stalk-shape">Stalk Shape:</label>
+	<select name="stalk-shape" id="stalk-shape">
+		<option value="Enlarging">Enlarging</option>
+		<option value="Tapering">Tapering</option>
+	</select>
+	<br><br>
+	<label for="stalk-root">Stalk Root:</label>
+	<select name="stalk-root" id="stalk-root">
+		<option value="Bulbous">Bulbous</option>
+		<option value="Club">Club</option>
+		<option value="Cup">Cup</option>
+		<option value="Equal">Equal</option>
+		<option value="Rhizomorphs">Rhizomorphs</option>
+		<option value="Rooted">Rooted</option>
+	</select>
+	<br><br>
+	<label for="stalk-surface-above-ring">Stalk Surface Above Ring:</label>
+	<select name="stalk-surface-above-ring" id="stalk-surface-above-ring">
+		<option value="Fibrous">Fibrous</option>
+		<option value="Scaly">Scaly</option>
+		<option value="Silky">Silky</option>
+		<option value="Smooth">Smooth</option>
+	</select>
+	<br><br>
+	<label for="stalk-surface-below-ring">Stalk Surface Below Ring:</label>
+	<select name="stalk-surface-below-ring" id="stalk-surface-below-ring">
+		<option value="Fibrous">Fibrous</option>
+		<option value="Scaly">Scaly</option>
+		<option value="Silky">Silky</option>
+		<option value="Smooth">Smooth</option>
+	</select>
+	<br><br>
+	<label for="stalk-color-above-ring">Stalk Color Above Ring:</label>
+	<select name="stalk-color-above-ring" id="stalk-color-above-ring">
+		<option value="Brown">Brown</option>
+		<option value="Buff">Buff</option>
+		<option value="Cinnamon">Cinnamon</option>
+		<option value="Gray">Gray</option>
+		<option value="Orange">Orange</option>
+		<option value="Pink">Pink</option>
+		<option value="Red">Red</option>
+		<option value="White">White</option>
+		<option value="Yellow">Yellow</option>
+	</select>
+	<br><br>
+	<label for="stalk-color-below-ring">Stalk Color Below Ring:</label>
+	<select name="stalk-color-below-ring" id="stalk-color-below-ring">
+		<option value="Brown">Brown</option>
+		<option value="Buff">Buff</option>
+		<option value="Cinnamon">Cinnamon</option>
+		<option value="Gray">Gray</option>
+		<option value="Orange">Orange</option>
+		<option value="Pink">Pink</option>
+		<option value="Red">Red</option>
+		<option value="White">White</option>
+		<option value="Yellow">Yellow</option>
+	</select>
+	<br><br>
+	<label for="veil-type">Veil Type:</label>
+	<select name="veil-type" id="veil-type">
+		<option value="Partial">Partial</option>
+		<option value="Universal">Universal</option>
+	</select>
+	<br><br>
+	<label for="veil-color">Veil Color:</label>
+	<select name="veil-color" id="veil-color">
+		<option value="Brown">Brown</option>
+		<option value="Orange">Orange</option>
+		<option value="White">White</option>
+		<option value="Yellow">Yellow</option>
+	</select>
+	<br><br>
+	<label for="ring-number">Ring Number:</label>
+	<select name="ring-number" id="ring-number">
+		<option value="None">None</option>
+		<option value="One">One</option>
+		<option value="Two">Two</option>
+	</select>
+	<br><br>
+	<label for="ring-type">Ring Type:</label>
+	<select name="ring-type" id="ring-type">
+		<option value="Cobwebby">Cobwebby</option>
+		<option value="Evanescent">Evanescent</option>
+		<option value="Flaring">Flaring</option>
+		<option value="Large">Large</option>
+		<option value="None">None</option>
+		<option value="Pendant">Pendant</option>
+		<option value="Sheathing">Sheathing</option>
+		<option value="Zone">Zone</option>
+	</select>
+	<br><br>
+	<label for="spore-print-color">Spore Print Color:</label>
+	<select name="spore-print-color" id="spore-print-color">
+		<option value="Black">Black</option>
+		<option value="Brown">Brown</option>
+		<option value="Buff">Buff</option>
+		<option value="Chocolate">Chocolate</option>
+		<option value="Green">Green</option>
+		<option value="Orange">Orange</option>
+		<option value="Purple">Purple</option>
+		<option value="White">White</option>
+		<option value="Yellow">Yellow</option>
+	</select>
+	<br><br>
+	<label for="population">Population:</label>
+	<select name="population" id="population">
+		<option value="Abundant">Abundant</option>
+		<option value="Clustered">Clustered</option>
+		<option value="Numerous">Numerous</option>
+		<option value="Scattered">Scattered</option>
+		<option value="Several">Several</option>
+        <option value="Solitary">Solitary</option>
+	</select>
+        <br><br>
+	<label for="habitat">Habitat:</label>
+	<select name="habitat" id="habitat">
+		<option value="Grasses">Grasses</option>
+		<option value="Leaves">Leaves</option>
+		<option value="Meadows">Meadows</option>
+		<option value="Paths">Paths</option>
+		<option value="Urban">Urban</option>
+		<option value="Waste">Waste</option>
+		<option value="Woods">Woods</option>
+	</select>
+	<br><br>
+	<input type="submit" value="Predict">
+</form>
+
+    <p><strong>Result:</strong> {{ result }}</p>
+</body>
+</html>
